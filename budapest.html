@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budapest</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f1f1f1;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            background-color: #1e2a47;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            transition: transform 0.3s ease;
+        }
+
+        header h1:hover {
+            transform: scale(1.05);
+        }
+
+        nav {
+            margin-top: 20px;
+            position: relative;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 25px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            font-size: 1.1em;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #3498db;
+        }
+
+        /* Menu hamburguesa */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 30px;
+        }
+
+        .bar {
+            height: 4px;
+            background-color: white;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        section {
+            padding: 60px 40px;
+            margin: 40px auto;
+            max-width: 1000px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        section:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        section h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        section p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        section img {
+            width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        section img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Estilos de pie de página */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #1e2a47;
+            color: white;
+            font-size: 1.1em;
+            border-top: 2px solid #2980b9;
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                width: 100%;
+                padding: 0;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            section {
+                padding: 40px 20px;
+                margin: 20px 10px;
+                max-width: 100%;
+            }
+
+            section h2 {
+                font-size: 1.7em;
+            }
+
+            footer {
+                font-size: 1em;
+                padding: 25px 10px;
+            }
+        }
+
+        /* Estilos para pantallas más pequeñas (smartphones) */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            nav ul li a {
+                font-size: 1.1em;
+            }
+
+            section {
+                padding: 25px 15px;
+            }
+
+            section h2 {
+                font-size: 1.5em;
+            }
+
+            section img {
+                border-radius: 8px;
+            }
+
+            footer {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mi Viaje a Budapest</h1>
+        <nav>
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul id="nav-list">
+                <li><a href="#dia1">Día 19/07: Zona de Buda</a></li>
+                <li><a href="#dia2">Día 20/07: Zona de Pest</a></li>
+                <li><a href="#dia3">Día 21/07: Centro de Pest</a></li>
+                <li><a href="#dia4">Día 22/07: Relax y cultura</a></li>
+                <li><a href="#notas">Notas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="dia1">
+        <h2>Día 19/07: Budapest (Zona de Buda - Completo)</h2>
+        <ol>
+            <li><strong>Bastión de los Pescadores (Halászbástya)</strong>
+                <p>El Bastión de los Pescadores es un mirador en el distrito de Buda, construido en estilo neogótico entre 1895 y 1902. Este impresionante monumento ofrece vistas espectaculares de la ciudad, incluyendo el Parlamento y el Danubio. El Bastión está compuesto por siete torres, cada una representando una de las tribus fundadoras de Hungría.</p>
+            </li>
+            <li><strong>Iglesia de Matías (Mátyás-templom)</strong>
+                <p>La Iglesia de Matías es una de las más famosas de Budapest, ubicada junto al Bastión de los Pescadores. Esta iglesia de estilo gótico data del siglo XIII y ha sido testigo de numerosas coronaciones reales. Su techo de azulejos coloridos y su interior decorado con frescos y esculturas la convierten en un atractivo turístico de primer orden.</p>
+            </li>
+            <li><strong>Castillo de Buda (Budavári Palota)</strong>
+                <p>El Castillo de Buda es una fortaleza histórica que ha sido la residencia de los reyes húngaros durante siglos. Situado en la cima de la colina de Buda, el castillo alberga el Museo de Historia de Budapest y la Galería Nacional Húngara. Desde el castillo, se puede disfrutar de vistas panorámicas de la ciudad, el Danubio y el Parlamento.</p>
+            </li>
+            <li><strong>Puente de las Cadenas (Széchenyi Lánchíd)</strong>
+                <p>El Puente de las Cadenas es uno de los puentes más emblemáticos de Budapest. Inaugurado en 1849, conecta el distrito de Buda con Pest a través del Danubio. Este puente colgante de hierro es famoso por sus elegantes leones de piedra que adornan sus accesos y es considerado un símbolo de la modernización de Hungría.</p>
+            </li>
+            <li><strong>Colina Gellért (Gellért-hegy)</strong>
+                <p>La Colina Gellért es uno de los puntos más altos de Budapest, que ofrece vistas espectaculares de la ciudad. En la cima se encuentra la Ciudadela, una fortaleza construida por los austriacos en el siglo XIX. También está la Estatua de la Libertad, un monumento conmemorativo de la liberación de Hungría. Es un lugar perfecto para disfrutar de la naturaleza y las vistas.</p>
+            </li>
+            <li><strong>Cena cerca del Danubio</strong>
+                <p>Al final del día, disfruta de una cena en uno de los restaurantes cerca del Danubio, donde podrás degustar platos típicos húngaros mientras disfrutas de la vista nocturna del río y los monumentos iluminados.</p>
+            </li>
+        </ol>
+    </section>
+
+    <section id="dia2">
+        <h2>Día 20/07: Budapest (Zona de Pest)</h2>
+        <ol>
+            <li><strong>Parlamento Húngaro (Országház)</strong>
+                <p>El Parlamento Húngaro es uno de los edificios más impresionantes de Budapest, construido entre 1885 y 1904 en estilo neogótico. Es la sede de la Asamblea Nacional de Hungría y se puede visitar con un recorrido guiado para conocer más sobre su historia y arquitectura. Destaca su enorme cúpula y sus detalles ornamentales.</p>
+            </li>
+            <li><strong>Basílica de San Esteban (Szent István-bazilika)</strong>
+                <p>La Basílica de San Esteban es una de las iglesias más importantes de Budapest. Su construcción comenzó en 1851 y se completó en 1905. En su interior se encuentra la mano derecha de San Esteban, el primer rey de Hungría. La cúpula de la basílica ofrece una de las mejores vistas panorámicas de la ciudad.</p>
+            </li>
+            <li><strong>Mercado Central (Nagyvásárcsarnok)</strong>
+                <p>Este mercado cubierto es uno de los lugares más vibrantes de Budapest, donde puedes comprar productos frescos, recuerdos y probar especialidades locales como el goulash o los embutidos húngaros. El edificio en sí es una obra maestra del estilo arquitectónico neogótico y cuenta con una gran variedad de tiendas.</p>
+            </li>
+            <li><strong>Andrássy Út y Ópera</strong>
+                <p>El bulevar Andrássy es una de las calles más elegantes de Budapest, conocida por sus tiendas de lujo, teatros y cafés históricos. En esta zona se encuentra la Ópera Estatal Húngara, un majestuoso edificio construido en 1884. Se puede realizar una visita guiada para admirar su impresionante arquitectura interior.</p>
+            </li>
+            <li><strong>Café New York</strong>
+                <p>El Café New York es uno de los cafés más famosos de Budapest, conocido por su opulencia y su historia. Inaugurado en 1894, este café ha sido un punto de encuentro para escritores, artistas y personajes famosos. Hoy en día, puedes disfrutar de una taza de café mientras te sumerges en su ambiente histórico.</p>
+            </li>
+            <li><strong>Isla Margarita (Margitsziget)</strong>
+                <p>La Isla Margarita es un oasis verde en el corazón del Danubio, ideal para relajarse y dar un paseo en bicicleta o a pie. La isla alberga jardines, fuentes, un pequeño zoo y la famosa fuente musical que ofrece espectáculos de agua y luz por la noche.</p>
+            </li>
+        </ol>
+    </section>
+
+    <section id="dia3">
+        <h2>Día 21/07: Budapest (Centro de Pest)</h2>
+        <ol>
+            <li><strong>Museo de Bellas Artes</strong>
+                <p>Este museo alberga una de las colecciones de arte más importantes de Europa Central, con obras de artistas como Rembrandt, Goya y Van Gogh. El edificio en sí es un hermoso ejemplo de arquitectura clásica, y su amplia colección abarca desde el arte antiguo hasta el arte moderno.</p>
+            </li>
+            <li><strong>Ópera de Budapest</strong>
+                <p>La Ópera de Budapest es un impresionante teatro de ópera situado en el bulevar Andrássy. Es famoso por su acústica excepcional y su arquitectura de estilo renacentista. Se puede realizar una visita guiada para descubrir su historia y explorar sus suntuosos interiores.</p>
+            </li>
+            <li><strong>Café New York</strong>
+                <p>Este icónico café se encuentra en el Hotel New York Palace y es conocido por su opulencia. Ha sido un lugar de encuentro de intelectuales y artistas desde su apertura en 1894. Es un excelente lugar para disfrutar de una taza de café o un pastel mientras aprecias su histórico interior.</p>
+            </li>
+            <li><strong>Jardines de la Isla Margarita</strong>
+                <p>En los jardines de la Isla Margarita podrás relajarte en un entorno natural, disfrutar de las fuentes, estanques y el paisaje verde, perfectos para hacer una pausa después de un día de exploración por la ciudad. Además, puedes alquilar una bicicleta o un cochecito eléctrico para recorrer la isla.</p>
+            </li>
+        </ol>
+    </section>
+
+    <section id="dia4">
+        <h2>Día 22/07: Relax y cultura</h2>
+        <ol>
+            <li><strong>Baños Széchenyi</strong>
+                <p>Un lugar ideal para relajarte en los famosos baños termales de Budapest. El complejo Széchenyi es uno de los mayores y más impresionantes de Europa, con piscinas al aire libre y cubiertas, saunas y baños termales. Es el lugar perfecto para descansar después de varios días de turismo.</p>
+            </li>
+            <li><strong>Visita al Museo Nacional Húngaro</strong>
+                <p>Este museo alberga una rica colección de arte y objetos históricos que narran la evolución de la historia y cultura húngaras. Es un lugar fascinante para aprender sobre la historia del país desde la Edad Media hasta la modernidad.</p>
+            </li>
+            <li><strong>Paseo por el barrio Judío</strong>
+                <p>Este barrio, lleno de historia, es el hogar de la Gran Sinagoga de Budapest, una de las más grandes del mundo. Aquí puedes aprender sobre la historia de la comunidad judía de Budapest y explorar sus sinagogas, museos y restaurantes kosher.</p>
+            </li>
+        </ol>
+    </section>
+
+    <section id="notas">
+        <h2>Notas</h2>
+        <p>Es importante llevar zapatos cómodos, ya que las caminatas por Budapest pueden ser largas y exigentes. También recomendamos tener una tarjeta de transporte público para facilitar el desplazamiento por la ciudad. No olvides probar el goulash y los pasteles tradicionales, como el Kürtőskalács (pastel en espiral) y el Dobos torte.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Mi Viaje a Budapest. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navList = document.getElementById('nav-list');
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('show');
+        });
+    </script>
+
+</body>
+</html>
