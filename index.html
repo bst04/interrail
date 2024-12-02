@@ -63,32 +63,23 @@
             position: absolute;
             top: 15%; /* Título centrado y más visible */
             width: 100%;
-            animation: fadeIn 2s ease-out; /* Animación para la entrada del título */
-        }
-
-        /* Efecto de entrada */
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(-50px); }
-            100% { opacity: 1; transform: translateY(0); }
         }
 
         header h1 {
-            font-size: 6rem; /* Título grande y claro */
+            font-size: 5rem; /* Título grande y claro */
             color: white;
             font-weight: 700;
             margin: 0;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9); /* Sombra más suave y pronunciada */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejorar visibilidad */
         }
 
         /* Contenedor de las ciudades */
         .cities {
             position: absolute;
-            top: 40%; /* Colocamos las ciudades debajo del título */
+            top: 30%; /* Colocamos las ciudades debajo del título */
             text-align: center;
             width: 100%;
             font-size: 1.5rem;
-            line-height: 2rem;
-            z-index: 1;
         }
 
         .city-link {
@@ -114,11 +105,11 @@
         /* Estilos responsivos */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 4rem; /* Reducir el tamaño del título en dispositivos móviles */
+                font-size: 3rem; /* Reducir el tamaño del título en dispositivos móviles */
             }
 
             .cities {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
 
             .city-link {
@@ -130,7 +121,7 @@
 
         @media (max-width: 480px) {
             header h1 {
-                font-size: 3rem; /* Aún más pequeño en pantallas pequeñas */
+                font-size: 2.5rem; /* Aún más pequeño en pantallas pequeñas */
             }
 
             .city-link {
