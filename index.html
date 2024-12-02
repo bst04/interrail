@@ -78,42 +78,6 @@
             transform: scale(1.1);
         }
 
-        /* Menú desplegable para dispositivos móviles */
-        .menu-button {
-            display: none;
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            font-size: 1rem;
-            font-weight: bold;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .menu-button:hover {
-            background-color: #0056b3;
-        }
-
-        nav ul.active {
-            display: block;
-            background-color: #222;
-            width: 100%;
-            text-align: center;
-            padding: 10px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        nav ul.active li {
-            margin: 10px 0;
-        }
-
-        nav ul.active li a {
-            padding: 12px 20px;
-            font-size: 1.2rem;
-        }
-
         /* Sección del video */
         section {
             width: 100%;
@@ -245,8 +209,9 @@
 
     <!-- Sección del video -->
     <section>
-        <video id="video" autoplay loop muted>
+        <video id="video" autoplay loop muted playsinline>
             <source src="interra.mp4" type="video/mp4">
+            <source src="interra.webm" type="video/webm"> <!-- Agregamos otro formato para mayor compatibilidad -->
             Tu navegador no soporta el formato de video.
         </video>
     </section>
