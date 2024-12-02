@@ -21,6 +21,7 @@
             height: 100vh;
             overflow: hidden;
             position: relative;
+            background-color: #222;
         }
 
         /* Sección del video */
@@ -44,11 +45,6 @@
             filter: brightness(0.5); /* Oscurecemos un poco el video para mejorar la visibilidad del texto */
         }
 
-        /* Fondo degradado si el video no carga */
-        #video::-webkit-media-controls {
-            display: none;
-        }
-
         section::before {
             content: '';
             position: absolute;
@@ -65,177 +61,111 @@
             text-align: center;
             z-index: 1;
             position: absolute;
-            top: 10%; /* Título siempre visible y arriba */
+            top: 15%; /* Título centrado y más visible */
             width: 100%;
         }
 
         header h1 {
-            font-size: 4rem; /* Título más grande */
+            font-size: 5rem; /* Título grande y claro */
             color: white;
             font-weight: 700;
             margin: 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejorar visibilidad */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejorar visibilidad */
         }
 
-        /* Botón de menú */
-        .menu-container {
+        /* Contenedor de las ciudades */
+        .cities {
             position: absolute;
-            top: 20%; /* Botón debajo del título */
-            width: 100%;
+            top: 30%; /* Colocamos las ciudades debajo del título */
             text-align: center;
-            z-index: 1;
-        }
-
-        .menu-button {
-            background-color: #007bff;
-            color: white;
+            width: 100%;
             font-size: 1.5rem;
+        }
+
+        .city-link {
+            color: white;
+            font-size: 1.4rem;
             font-weight: 600;
-            padding: 15px 30px;
-            border-radius: 50px;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .menu-button:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-        }
-
-        /* Menú de navegación */
-        nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: none; /* Ocultamos el menú por defecto */
-            flex-direction: column;
-            background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro para los enlaces */
-            border-radius: 10px;
-            padding: 15px;
-            width: 90%; /* Ancho ajustado para que se vea bien */
-            max-width: 500px;
-            margin-top: 20px;
-        }
-
-        nav ul.active {
-            display: block;
-        }
-
-        nav ul li {
-            margin: 10px 0;
-        }
-
-        nav ul li a {
+            padding: 5px 10px;
             text-decoration: none;
-            color: white;
-            font-size: 1.5rem; /* Mayor tamaño de fuente */
-            font-weight: 600;
-            padding: 10px 20px;
-            border-radius: 30px;
-            transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+            margin: 0 8px;
+            display: inline-block;
+            transition: all 0.3s ease;
         }
 
-        nav ul li a:hover {
-            background-color: #007bff;
-            color: white;
-            transform: scale(1.05);
+        .city-link:hover {
+            color: #007bff;
+            transform: scale(1.1);
+        }
+
+        .city-link:active {
+            color: #0056b3;
         }
 
         /* Estilos responsivos */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2.5rem; /* Título aún grande pero adaptado */
+                font-size: 3rem; /* Reducir el tamaño del título en dispositivos móviles */
             }
 
-            .menu-button {
-                font-size: 1.3rem;
-                padding: 12px 25px;
-                width: 80%;
+            .cities {
+                font-size: 1.2rem;
             }
 
-            nav ul {
-                flex-direction: column;
-                display: none;
-                width: 80%;
-                margin: 0 auto;
-                padding: 10px;
-                background-color: rgba(0, 0, 0, 0.8); /* Más contraste en el fondo */
-            }
-
-            nav ul.active {
-                display: block;
-            }
-
-            nav ul li a {
-                font-size: 1.3rem;
-                padding: 12px 20px;
-                text-align: center;
+            .city-link {
+                font-size: 1.2rem;
+                padding: 8px 16px;
+                margin: 5px;
             }
         }
 
         @media (max-width: 480px) {
             header h1 {
-                font-size: 2rem; /* Aún más pequeño en pantallas muy pequeñas */
+                font-size: 2.5rem; /* Aún más pequeño en pantallas pequeñas */
             }
 
-            nav ul li a {
-                font-size: 1.2rem;
+            .city-link {
+                font-size: 1rem;
+                padding: 6px 12px;
+                margin: 4px;
             }
 
-            .menu-button {
-                font-size: 1.1rem;
-                padding: 10px 20px;
+            .cities {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Título principal -->
+    <!-- Título -->
     <header>
         <h1>Interrail 2025</h1>
     </header>
 
-    <!-- Botón de menú -->
-    <div class="menu-container">
-        <button class="menu-button" onclick="toggleMenu()">Ciudades</button>
-    </div>
-
-    <!-- Menú de navegación -->
-    <nav>
-        <ul id="menu">
-            <li><a href="budapest.html">Budapest</a></li>
-            <li><a href="viena.html">Viena</a></li>
-            <li><a href="praga.html">Praga</a></li>
-            <li><a href="berlin.html">Berlín</a></li>
-            <li><a href="amsterdam.html">Ámsterdam</a></li>
-            <li><a href="paris.html">París</a></li>
-        </ul>
-    </nav>
-
-    <!-- Sección del video de fondo -->
+    <!-- Video de fondo -->
     <section>
         <video id="video" autoplay loop muted playsinline>
             <source src="interra.mp4" type="video/mp4">
-            <source src="interra.webm" type="video/webm"> <!-- Agregamos otro formato para mayor compatibilidad -->
+            <source src="interra.webm" type="video/webm">
             Tu navegador no soporta el formato de video.
         </video>
     </section>
 
-    <script>
-        // Función para activar o desactivar el menú desplegable
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            menu.classList.toggle('active');
-        }
-    </script>
+    <!-- Links de las ciudades -->
+    <div class="cities">
+        <a href="budapest.html" class="city-link">Budapest</a> ·
+        <a href="viena.html" class="city-link">Viena</a> ·
+        <a href="praga.html" class="city-link">Praga</a> ·
+        <a href="berlin.html" class="city-link">Berlín</a> ·
+        <a href="amsterdam.html" class="city-link">Ámsterdam</a> ·
+        <a href="paris.html" class="city-link">París</a>
+    </div>
+
 </body>
 </html>
