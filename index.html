@@ -19,6 +19,7 @@
             align-items: center;
             justify-content: flex-start;
             height: 100vh;
+            overflow: hidden;
         }
 
         /* Header */
@@ -31,7 +32,11 @@
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            position: relative;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
         }
 
         header h1 {
@@ -81,13 +86,13 @@
         /* Sección del video */
         section {
             width: 100%;
-            max-width: 1200px;
-            height: 500px; /* Ajustamos el tamaño para que se vea bien en todos los dispositivos */
-            margin: 30px auto;
             position: relative;
+            top: 70px; /* Deja espacio para el header */
+            bottom: 70px; /* Deja espacio para el footer */
+            height: calc(100vh - 140px); /* Resta el espacio del header y el footer */
+            margin: 0;
+            padding: 0;
             overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         }
 
         #video {
@@ -124,7 +129,11 @@
             color: white;
             padding: 20px;
             text-align: center;
-            margin-top: 30px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
         }
 
         footer a {
@@ -174,7 +183,7 @@
             }
 
             section {
-                height: 300px; /* Ajustamos el tamaño del video en móviles */
+                height: calc(100vh - 140px); /* Ajusta para que el video ocupe el espacio correcto */
             }
         }
 
