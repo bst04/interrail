@@ -308,6 +308,51 @@
             <li><strong>Paseo por Prater:</strong> Disfruta del ambiente relajado en el parque.</li>
         </ul>
     </section>
+     <section id="mapa">
+     <!-- Mapa de Austria -->
+<section id="mapa">
+    <h2 class="section-title">Mapa de Austria: Lugares Destacados</h2>
+    
+    <!-- Contenedor del mapa -->
+    <div id="map" style="width: 100%; height: 400px;"></div>
+
+    <!-- Incluir los scripts y estilos de Mapbox -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+
+    <script>
+        // Inicializar Mapbox
+        mapboxgl.accessToken = 'pk.eyJ1IjoiYnN0MDQiLCJhIjoiY200NzV4M3U4MDIxbDJpc29oZXd1NWw4MyJ9.4Hvxz2Q1ShdHT94-CKg6pg'; // Reemplaza con tu token de Mapbox
+        const map = new mapboxgl.Map({
+            container: 'map', // ID del contenedor del mapa
+            style: 'mapbox://styles/mapbox/streets-v12', // Estilo del mapa
+            center: [16.3738, 48.2082], // Coordenadas del centro (Viena)
+            zoom: 12 // Nivel de zoom
+        });
+
+        // Lugares destacados
+        const locations = [
+            { title: 'Hundertwasserhaus', coordinates: [16.3733, 48.2023] },
+            { title: 'Wiener Stadpark', coordinates: [16.3739, 48.1985] },
+            { title: 'Mozarthaus', coordinates: [16.3715, 48.2024] },
+            { title: 'Austrian Parliament Building', coordinates: [16.3705, 48.2064] },
+            { title: 'Hoher Markt', coordinates: [16.3730, 48.2095] },
+            { title: 'Viena State Opera', coordinates: [16.3700, 48.2033] },
+            { title: 'Schönbrunn Palace', coordinates: [16.3122, 48.1845] },
+            { title: 'Charles Church (Karlskirche)', coordinates: [16.3704, 48.1969] }
+        ];
+
+        // Añadir marcadores al mapa
+        locations.forEach(location => {
+            new mapboxgl.Marker()
+                .setLngLat(location.coordinates)
+                .setPopup(new mapboxgl.Popup({ offset: 25 }) // Ventana emergente
+                    .setText(location.title))
+                .addTo(map);
+        });
+    </script>
+
+</section>
 
     <!-- Día 1: Centro Histórico, Arte y Cultura -->
     <section id="dia1">
@@ -360,9 +405,10 @@
             <p><strong>Duración recomendada:</strong> 1.5-2 horas (si asistes a una función).</p>
             <a href="https://www.wiener-staatsoper.at/en/" target="_blank" class="btn">Más Información</a>
         </div>
-
+    
     </section>
-
+   
+  </section>
     <!-- Día 2: Palacios y Monumentos Emblemáticos -->
     <section id="dia2">
         <h2 class="section-title">Día 2: Palacios y Monumentos Emblemáticos</h2>
