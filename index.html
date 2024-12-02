@@ -15,12 +15,11 @@
             padding: 0;
             background-color: #111;
             color: #fff;
+            height: 100vh;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
-            overflow: hidden;
             position: relative;
         }
 
@@ -46,7 +45,7 @@
         header {
             text-align: center;
             z-index: 1;
-            position: relative;
+            margin-top: 10%; /* Posiciona el título más cerca del centro */
         }
 
         header h1 {
@@ -60,11 +59,11 @@
 
         /* Contenedor de las ciudades */
         .cities {
-            margin-top: 20px;
+            margin-top: 10px; /* Ajusta el espaciado entre el título y las banderas */
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
+            flex-wrap: wrap;
             z-index: 1;
         }
 
@@ -81,6 +80,10 @@
         }
 
         @media (max-width: 480px) {
+            header {
+                margin-top: 15%;
+            }
+
             header h1 {
                 font-size: 2rem;
             }
@@ -94,6 +97,14 @@
 <body>
     <header>
         <h1>Interrail 2025</h1>
+        <div class="cities">
+            <a href="budapest.html" class="city-link">🇭🇺</a>
+            <a href="viena.html" class="city-link">🇦🇹</a>
+            <a href="praga.html" class="city-link">🇨🇿</a>
+            <a href="berlin.html" class="city-link">🇩🇪</a>
+            <a href="amsterdam.html" class="city-link">🇳🇱</a>
+            <a href="paris.html" class="city-link">🇫🇷</a>
+        </div>
     </header>
 
     <section>
@@ -103,14 +114,5 @@
             Tu navegador no soporta el formato de video.
         </video>
     </section>
-
-    <div class="cities">
-        <a href="budapest.html" class="city-link">🇭🇺</a>
-        <a href="viena.html" class="city-link">🇦🇹</a>
-        <a href="praga.html" class="city-link">🇨🇿</a>
-        <a href="berlin.html" class="city-link">🇩🇪</a>
-        <a href="amsterdam.html" class="city-link">🇳🇱</a>
-        <a href="paris.html" class="city-link">🇫🇷</a>
-    </div>
 </body>
 </html>
