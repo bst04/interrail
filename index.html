@@ -41,7 +41,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.5); /* Añadimos un filtro para oscurecer el video y mejorar la legibilidad del texto encima */
+            filter: brightness(0.5); /* Oscurecemos un poco el video para mejorar la visibilidad del texto */
         }
 
         /* Fondo degradado si el video no carga */
@@ -65,21 +65,22 @@
             text-align: center;
             z-index: 1;
             position: absolute;
-            top: 30%;
+            top: 10%; /* Título siempre visible y arriba */
             width: 100%;
         }
 
         header h1 {
-            font-size: 3rem;
+            font-size: 4rem; /* Título más grande */
             color: white;
             font-weight: 700;
             margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejorar visibilidad */
         }
 
-        /* Menú de navegación */
+        /* Botón de menú */
         .menu-container {
             position: absolute;
-            top: 40%;
+            top: 20%; /* Botón debajo del título */
             width: 100%;
             text-align: center;
             z-index: 1;
@@ -88,10 +89,10 @@
         .menu-button {
             background-color: #007bff;
             color: white;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: 600;
-            padding: 12px 24px;
-            border-radius: 30px;
+            padding: 15px 30px;
+            border-radius: 50px;
             border: none;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
@@ -102,6 +103,7 @@
             transform: scale(1.05);
         }
 
+        /* Menú de navegación */
         nav {
             display: flex;
             justify-content: center;
@@ -114,6 +116,13 @@
             margin: 0;
             padding: 0;
             display: none; /* Ocultamos el menú por defecto */
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro para los enlaces */
+            border-radius: 10px;
+            padding: 15px;
+            width: 90%; /* Ancho ajustado para que se vea bien */
+            max-width: 500px;
+            margin-top: 20px;
         }
 
         nav ul.active {
@@ -121,15 +130,15 @@
         }
 
         nav ul li {
-            margin: 0 15px;
+            margin: 10px 0;
         }
 
         nav ul li a {
             text-decoration: none;
             color: white;
-            font-size: 1.1rem;
+            font-size: 1.5rem; /* Mayor tamaño de fuente */
             font-weight: 600;
-            padding: 12px 18px;
+            padding: 10px 20px;
             border-radius: 30px;
             transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
         }
@@ -137,37 +146,53 @@
         nav ul li a:hover {
             background-color: #007bff;
             color: white;
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         /* Estilos responsivos */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2rem;
+                font-size: 2.5rem; /* Título aún grande pero adaptado */
+            }
+
+            .menu-button {
+                font-size: 1.3rem;
+                padding: 12px 25px;
+                width: 80%;
             }
 
             nav ul {
                 flex-direction: column;
                 display: none;
+                width: 80%;
+                margin: 0 auto;
+                padding: 10px;
+                background-color: rgba(0, 0, 0, 0.8); /* Más contraste en el fondo */
             }
 
             nav ul.active {
                 display: block;
             }
 
-            .menu-button {
-                display: block;
-                margin: 20px auto;
+            nav ul li a {
+                font-size: 1.3rem;
+                padding: 12px 20px;
+                text-align: center;
             }
         }
 
         @media (max-width: 480px) {
             header h1 {
-                font-size: 1.6rem;
+                font-size: 2rem; /* Aún más pequeño en pantallas muy pequeñas */
             }
 
             nav ul li a {
-                font-size: 1rem;
+                font-size: 1.2rem;
+            }
+
+            .menu-button {
+                font-size: 1.1rem;
+                padding: 10px 20px;
             }
         }
     </style>
