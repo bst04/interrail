@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Interrail 2025 - Viena</title>
+    <style>
+        /* Estilo base */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 30px 10px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        /* Menú de navegación */
+        nav {
+            background-color: #2c3e50;
+            overflow: hidden;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 14px 20px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #34495e;
+            border-radius: 5px;
+        }
+
+        /* Menú hamburguesa */
+        .menu-icon {
+            display: none;
+            color: white;
+            font-size: 2em;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #2c3e50;
+        }
+
+        .menu {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+        }
+
+        .menu li {
+            margin: 10px 0;
+        }
+
+        .menu.show {
+            display: flex;
+        }
+
+        /* Estilo para el contenido */
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 1000px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #34495e;
+            text-align: center;
+        }
+
+        .site {
+            margin-bottom: 25px;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 20px;
+        }
+
+        .site h3 {
+            font-size: 1.4em;
+            color: #2c3e50;
+        }
+
+        .site p {
+            font-size: 1.1em;
+            color: #7f8c8d;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #27ae60;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #2ecc71;
+        }
+
+        footer {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 15px 10px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 1em;
+            margin: 0;
+        }
+
+        /* Estilo para las listas */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            font-size: 1.1em;
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+
+        .img-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .img-gallery img {
+            width: 100%;
+            max-width: 32%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Efecto hover en los enlaces */
+        a:hover {
+            color: #2ecc71;
+            text-decoration: underline;
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            section {
+                padding: 15px;
+                margin: 15px;
+            }
+
+            .section-title {
+                font-size: 1.6em;
+            }
+
+            .site h3 {
+                font-size: 1.2em;
+            }
+
+            .btn {
+                font-size: 1em;
+            }
+
+            .img-gallery img {
+                max-width: 100%;
+            }
+
+            footer p {
+                font-size: 0.9em;
+            }
+
+            /* Menú hamburguesa */
+            nav ul {
+                display: none;
+                width: 100%;
+                text-align: center;
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .menu.show {
+                display: block;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            section {
+                padding: 10px;
+                margin: 10px;
+            }
+
+            .section-title {
+                font-size: 1.4em;
+            }
+
+            .site h3 {
+                font-size: 1.1em;
+            }
+
+            .btn {
+                font-size: 0.9em;
+            }
+
+            footer p {
+                font-size: 0.8em;
+            }
+
+            nav ul li a {
+                font-size: 1em;
+                padding: 12px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Menú de Navegación -->
+    <nav>
+        <!-- Icono de menú hamburguesa -->
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+        <!-- Menú desplegable -->
+        <ul class="menu">
+            <li><a href="#consejos">Consejos Útiles</a></li>
+            <li><a href="#dia1">Día 1: Centro Histórico, Arte y Cultura</a></li>
+            <li><a href="#dia2">Día 2: Palacios y Monumentos Emblemáticos</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Interrail 2025 - Viena</h1>
+        <p>Todo lo que necesitas saber para una visita increíble a la capital de Austria.</p>
+    </header>
+
+    <!-- Consejos Útiles -->
+    <section id="consejos">
+        <h2 class="section-title">Consejos Útiles</h2>
+        <ul>
+            <li><strong>Transporte público:</strong> Utiliza la <a href="https://www.viennacitycard.at/en" target="_blank">Vienna Card</a> para transporte ilimitado y descuentos en atracciones.</li>
+            <li><strong>Cafés vieneses:</strong> No te pierdas el <a href="https://www.cafe-sacher.at/en/" target="_blank">Café Sacher</a> o el <a href="https://www.cafecentral.wien/en/" target="_blank">Café Central</a> para disfrutar de un café y pastel tradicional.</li>
+            <li><strong>Platos tradicionales:</strong> Prueba el <strong>Wiener Schnitzel</strong>, <strong>Sachertorte</strong> y <strong>Apfelstrudel</strong>.</li>
+            <li><strong>Vestimenta:</strong> Lleva ropa cómoda pero elegante, especialmente si planeas visitar la ópera.</li>
+            <li><strong>Propinas:</strong> Deja entre un 5-10% en restaurantes si el servicio es bueno.</li>
+            <li><strong>Seguridad:</strong> Viena es una ciudad segura, pero cuida tus pertenencias en áreas muy turísticas.</li>
+            <li><strong>Paseo por Prater:</strong> Disfruta del ambiente relajado en el parque.</li>
+        </ul>
+    </section>
+
+    <!-- Día 1: Centro Histórico, Arte y Cultura -->
+    <section id="dia1">
+        <h2 class="section-title">Día 1: Centro Histórico, Arte y Cultura</h2>
+
+        <div class="site">
+            <h3>1. Hundertwasserhaus</h3>
+            <p><strong>Descripción:</strong> Un complejo residencial famoso por su arquitectura excéntrica, diseñado por Friedensreich Hundertwasser. Es un ejemplo icónico de la arquitectura de Viena.</p>
+            <p><strong>Ubicación:</strong> Kegelgasse 36-38, 1030 Viena</p>
+            <p><strong>Duración recomendada:</strong> 30-40 minutos.</p>
+            <p><strong>Precio:</strong> Entrada gratuita para admirar el edificio desde el exterior.</p>
+            <a href="https://www.hundertwasserhaus.com/en/" target="_blank" class="btn">Más Información</a>
+        </div>
+
+        <div class="site">
+            <h3>2. Wiener Stadpark</h3>
+            <p><strong>Descripción:</strong> Un hermoso parque donde puedes disfrutar del monumento a Johann Strauss. Perfecto para un paseo relajante.</p>
+            <p><strong>Ubicación:</strong> Stadtpark, 1030 Viena</p>
+            <p><strong>Duración recomendada:</strong> 45 minutos a 1 hora.</p>
+            <p><strong>Precio:</strong> Entrada gratuita.</p>
+        </div>
+
+        <div class="site">
+            <h3>3. Mozarthaus</h3>
+            <p><strong>Descripción:</strong> La residencia de Mozart en Viena, donde puedes explorar su vida y obra a través de exposiciones interactivas.</p>
+            <p><strong>Ubicación:</strong> Domgasse 5, 1010 Viena</p>
+            <p><strong>Duración recomendada:</strong> 60-90 minutos.</p>
+            <p><strong>Precio:</strong> Entradas desde €12.</p>
+            <a href="https://www.mozarthaus.com/en/" target="_blank" class="btn">Más Información</a>
+        </div>
+
+        <div class="site">
+            <h3>4. Austrian Parliament Building</h3>
+            <p><strong>Descripción:</strong> Un hermoso edificio de estilo neoclásico. Si tienes tiempo, realiza una visita guiada. Si no, disfruta de su exterior.</p>
+            <p><strong>Ubicación:</strong> Dr. Karl Renner-Ring 3, 1017 Viena</p>
+            <p><strong>Duración recomendada:</strong> 30 minutos (solo exterior).</p>
+        </div>
+
+        <div class="site">
+            <h3>5. Hoher Markt</h3>
+            <p><strong>Descripción:</strong> Plaza histórica donde puedes ver el famoso reloj Anker. Si llegas a tiempo, verás su desfile de figuras mecánicas.</p>
+            <p><strong>Ubicación:</strong> Hoher Markt, 1010 Viena</p>
+            <p><strong>Duración recomendada:</strong> 30 minutos.</p>
+        </div>
+
+        <div class="site">
+            <h3>6. Viena State Opera</h3>
+            <p><strong>Descripción:</strong> Una de las óperas más famosas del mundo. Consulta si hay funciones y disfruta de un espectáculo si puedes.</p>
+            <p><strong>Ubicación:</strong> Opernring 2, 1010 Viena</p>
+            <p><strong>Duración recomendada:</strong> 1.5-2 horas (si asistes a una función).</p>
+            <a href="https://www.wiener-staatsoper.at/en/" target="_blank" class="btn">Más Información</a>
+        </div>
+
+    </section>
+
+    <!-- Día 2: Palacios y Monumentos Emblemáticos -->
+    <section id="dia2">
+        <h2 class="section-title">Día 2: Palacios y Monumentos Emblemáticos</h2>
+
+        <div class="site">
+            <h3>1. Schönbrunn Palace</h3>
+            <p><strong>Descripción:</strong> Palacio barroco con hermosos jardines. No te pierdas la visita a los apartamentos imperiales.</p>
+            <p><strong>Ubicación:</strong> Schönbrunner Schloßstraße 47, Viena</p>
+            <p><strong>Duración recomendada:</strong> 2 horas.</p>
+            <p><strong>Precio:</strong> Entradas desde €15 para un recorrido básico.</p>
+            <a href="https://www.schoenbrunn.at/en/" target="_blank" class="btn">Más Información</a>
+        </div>
+
+        <div class="site">
+            <h3>2. Charles Church (Karlskirche)</h3>
+            <p><strong>Descripción:</strong> Una iglesia barroca impresionante, con vistas panorámicas desde su cúpula.</p>
+            <p><strong>Ubicación:</strong> Kreuzherrengasse 1, 1040 Viena</p>
+            <p><strong>Duración recomendada:</strong> 30-45 minutos.</p>
+        </div>
+
+        <div class="site">
+            <h3>3. Paseo por el centro</h3>
+            <p><strong>Descripción:</strong> Disfruta de un paseo por las famosas calles comerciales de Graben o Kohlmarkt.</p>
+            <p><strong>Ubicación:</strong> Graben y Kohlmarkt, 1010 Viena</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Guía Completa de Viena | Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        // Función para mostrar u ocultar el menú hamburguesa
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.classList.toggle('show');
+        }
+    </script>
+
+</body>
+
+</html>
