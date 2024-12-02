@@ -6,6 +6,7 @@
     <title>Interrail 2025</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         /* Estilos generales */
         body {
@@ -42,7 +43,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.5); /* Oscurecemos un poco el video para mejorar la visibilidad del texto */
+            filter: brightness(0.6) contrast(1.2); /* Ajusta brillo y contraste para mejorar la visibilidad */
         }
 
         section::before {
@@ -52,7 +53,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
             pointer-events: none;
         }
 
@@ -61,88 +62,96 @@
             text-align: center;
             z-index: 1;
             position: absolute;
-            top: 15%; /* Título centrado y más visible */
+            top: 15%;
             width: 100%;
-            animation: fadeIn 2s ease-out; /* Animación para la entrada del título */
+            animation: fadeIn 2s ease-out;
         }
 
-        /* Efecto de entrada */
+        /* Animación del título */
         @keyframes fadeIn {
             0% { opacity: 0; transform: translateY(-50px); }
             100% { opacity: 1; transform: translateY(0); }
         }
 
         header h1 {
-            font-size: 7rem; /* Título grande y claro */
+            font-size: 6rem;
             color: white;
-            font-weight: 900; /* Hacemos que el texto sea más pesado */
+            font-weight: 700;
             margin: 0;
-            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9); /* Sombra más intensa */
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase; /* Título más impactante */
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
         }
 
         /* Contenedor de las ciudades */
         .cities {
             position: absolute;
-            top: 40%; /* Colocamos las ciudades debajo del título */
+            top: 40%;
             text-align: center;
             width: 100%;
             font-size: 1.5rem;
             line-height: 2rem;
             z-index: 1;
             display: flex;
-            flex-wrap: wrap; /* Permite que los elementos se envuelvan */
-            justify-content: center; /* Centra los elementos */
-            gap: 15px; /* Espaciado entre las ciudades */
-            margin-top: 20px; /* Espacio entre el título y las ciudades */
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
         }
 
+        /* Estilos de los enlaces de las ciudades */
         .city-link {
-            color: white;
-            font-size: 1.4rem;
+            color: #fff;
+            font-size: 1.5rem;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: 2px solid transparent;
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .city-link:hover {
             color: #007bff;
+            background: rgba(0, 123, 255, 0.2);
             transform: scale(1.1);
         }
 
         .city-link:active {
             color: #0056b3;
+            background: rgba(0, 123, 255, 0.4);
         }
 
         /* Estilos responsivos */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 5rem; /* Reducir el tamaño del título en dispositivos móviles */
+                font-size: 4rem; /* Título más pequeño en dispositivos móviles */
             }
 
             .cities {
-                font-size: 1.3rem;
-                justify-content: center;
-                gap: 10px;
+                font-size: 1.2rem;
+                gap: 15px;
+                justify-content: space-evenly; /* Alineación más fluida */
             }
 
             .city-link {
-                font-size: 1.2rem;
-                padding: 8px 16px;
+                font-size: 1.3rem;
+                padding: 8px 12px;
                 margin: 5px;
             }
         }
 
         @media (max-width: 480px) {
             header h1 {
-                font-size: 4rem; /* Aún más pequeño en pantallas pequeñas */
+                font-size: 3rem; /* Aún más pequeño en pantallas pequeñas */
             }
 
             .cities {
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
+                flex-direction: row; /* Asegura que las ciudades sigan en fila */
+                justify-content: space-evenly; /* Distribuir las ciudades de manera uniforme */
                 font-size: 1rem;
+                text-align: center;
             }
 
             .city-link {
@@ -171,10 +180,10 @@
 
     <!-- Links de las ciudades -->
     <div class="cities">
-        <a href="budapest.html" class="city-link">Budapest</a> 
-        <a href="viena.html" class="city-link">Viena</a> 
-        <a href="praga.html" class="city-link">Praga</a> 
-        <a href="berlin.html" class="city-link">Berlín</a> 
+        <a href="budapest.html" class="city-link">Budapest</a>
+        <a href="viena.html" class="city-link">Viena</a>
+        <a href="praga.html" class="city-link">Praga</a>
+        <a href="berlin.html" class="city-link">Berlín</a>
         <a href="amsterdam.html" class="city-link">Ámsterdam</a>
         <a href="paris.html" class="city-link">París</a>
     </div>
