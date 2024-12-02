@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recorrido por Europa</title>
+    <!-- Agregamos Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            font-size: 2.5rem;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            width: 90%;
+            height: 500px; /* Mapa con una altura específica */
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0;
+            border-radius: 12px; /* Bordes redondeados */
+            overflow: hidden; /* Evita que el contenido se desborde de los bordes redondeados */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            border: 2px solid #eee; /* Borde suave */
+            position: relative; /* Para posicionar el video dentro */
+        }
+
+        /* Estilo para el video que ocupa toda la sección */
+        #video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Hace que el video cubra toda la sección */
+            z-index: -1; /* Asegura que el video quede detrás de otros elementos */
+        }
+
+        footer {
+            background-color: #ffffff;
+            color: #333;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Recorrido por Europa</h1>
+    </header>
+
+    <!-- Contenedor del video en lugar del mapa -->
+    <section>
+        <!-- Video en lugar del mapa, puedes reemplazar la URL por el archivo que desees -->
+        <video id="video" autoplay loop muted>
+            <source src="interra.mp4" type="video/mp4"> <!-- Reemplaza "tu-video.mp4" con tu archivo de video -->
+            Tu navegador no soporta el formato de video.
+        </video>
+    </section>
+
+    <!-- Footer con información adicional -->
+    <footer>
+        <p>Desarrollado por <a href="https://github.com" target="_blank">Tu Nombre</a> &copy; 2024</p>
+    </footer>
+</body>
+</html>
