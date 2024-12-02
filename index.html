@@ -63,33 +63,44 @@
             position: absolute;
             top: 15%; /* Título centrado y más visible */
             width: 100%;
+            animation: fadeIn 2s ease-out; /* Animación para la entrada del título */
+        }
+
+        /* Efecto de entrada */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
         header h1 {
-            font-size: 5rem; /* Título grande y claro */
+            font-size: 7rem; /* Título grande y claro */
             color: white;
-            font-weight: 700;
+            font-weight: 900; /* Hacemos que el texto sea más pesado */
             margin: 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejorar visibilidad */
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9); /* Sombra más intensa */
         }
 
         /* Contenedor de las ciudades */
         .cities {
             position: absolute;
-            top: 30%; /* Colocamos las ciudades debajo del título */
+            top: 40%; /* Colocamos las ciudades debajo del título */
             text-align: center;
             width: 100%;
             font-size: 1.5rem;
+            line-height: 2rem;
+            z-index: 1;
+            display: flex;
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+            justify-content: center; /* Centra los elementos */
+            gap: 15px; /* Espaciado entre las ciudades */
+            margin-top: 20px; /* Espacio entre el título y las ciudades */
         }
 
         .city-link {
             color: white;
             font-size: 1.4rem;
             font-weight: 600;
-            padding: 5px 10px;
             text-decoration: none;
-            margin: 0 8px;
-            display: inline-block;
             transition: all 0.3s ease;
         }
 
@@ -105,11 +116,13 @@
         /* Estilos responsivos */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 3rem; /* Reducir el tamaño del título en dispositivos móviles */
+                font-size: 5rem; /* Reducir el tamaño del título en dispositivos móviles */
             }
 
             .cities {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
+                justify-content: center;
+                gap: 10px;
             }
 
             .city-link {
@@ -121,22 +134,21 @@
 
         @media (max-width: 480px) {
             header h1 {
-                font-size: 2.5rem; /* Aún más pequeño en pantallas pequeñas */
+                font-size: 4rem; /* Aún más pequeño en pantallas pequeñas */
+            }
+
+            .cities {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                font-size: 1rem;
             }
 
             .city-link {
                 font-size: 1rem;
                 padding: 6px 12px;
                 margin: 4px;
-            }
-
-            .cities {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                font-size: 1rem;
             }
         }
     </style>
@@ -159,11 +171,11 @@
 
     <!-- Links de las ciudades -->
     <div class="cities">
-        <a href="budapest.html" class="city-link">Budapest</a> ·
-        <a href="viena.html" class="city-link">Viena</a> ·
-        <a href="praga.html" class="city-link">Praga</a> ·
-        <a href="berlin.html" class="city-link">Berlín</a> ·
-        <a href="amsterdam.html" class="city-link">Ámsterdam</a> ·
+        <a href="budapest.html" class="city-link">Budapest</a> 
+        <a href="viena.html" class="city-link">Viena</a> 
+        <a href="praga.html" class="city-link">Praga</a> 
+        <a href="berlin.html" class="city-link">Berlín</a> 
+        <a href="amsterdam.html" class="city-link">Ámsterdam</a>
         <a href="paris.html" class="city-link">París</a>
     </div>
 
