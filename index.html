@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interrail 2025 - Planificador</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- OpenLayers CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.4.0/ol.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <span class="navbar-logo">🚆</span>
+      <span class="navbar-title">Interrail 2025</span>
+      <div class="navbar-nav">
+        <a href="#itinerario" class="navbar-link active" aria-label="Itinerario"><span class="navbar-icon">📅</span> Itinerario</a>
+        <a href="#mapa" class="navbar-link" aria-label="Mapa"><span class="navbar-icon">🗺️</span> Mapa</a>
+        <a href="#alojamientos" class="navbar-link" aria-label="Alojamientos"><span class="navbar-icon">🏨</span> Alojamientos</a>
+        <a href="#documentacion" class="navbar-link" aria-label="Documentación"><span class="navbar-icon">📂</span> Documentación</a>
+      </div>
+    </div>
+  </nav>
+  <main class="main-content">
+    <!-- Itinerario -->
+    <section id="itinerario" class="main-section active">
+      <h1>Itinerario</h1>
+      <div id="itinerary-list"></div>
+    </section>
+    <!-- Mapa -->
+    <section id="mapa" class="main-section">
+      <h1>Mapa del recorrido</h1>
+      <div id="map" class="mapbox-map"></div>
+      <div class="mapa-leyenda">
+        <span><span class="leyenda-tren"></span> Tren</span>
+        <span><span class="leyenda-avion"></span> Avión</span>
+      </div>
+      <div id="viaje-info" class="viaje-info"></div>
+    </section>
+    <!-- Alojamientos -->
+    <section id="alojamientos" class="main-section">
+      <h1>Alojamientos</h1>
+      <div id="alojamientos-lista" class="alojamientos-lista"></div>
+    </section>
+    <!-- Documentación -->
+    <section id="documentacion" class="main-section">
+      <h1>Documentación</h1>
+      <div id="personas-docs" class="personas-docs"></div>
+    </section>
+  </main>
+  <!-- OpenLayers JS -->
+  <script src="https://cdn.jsdelivr.net/npm/ol@v7.4.0/dist/ol.js"></script>
+  <script src="app.js"></script>
+</body>
+</html> 
