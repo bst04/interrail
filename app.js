@@ -127,7 +127,7 @@ const alojamientos = [
 ];
 
 const personas = [
-  'Bruno', 'María', 'Xavier', 'Lucia', 'Andrea'
+  'Bruno', 'María', 'Xabier', 'Lucia', 'Andrea'
 ];
 
 // Render Itinerario
